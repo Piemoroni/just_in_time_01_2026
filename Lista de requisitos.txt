@@ -1,0 +1,54 @@
+ENTREGA 01 – LISTA DE REQUISITOS FUNCIONAIS
+
+[RF01] Interface de autenticação de usuários
+	[RF01.1] Solicitar e-mail e senha do usuário.
+	[RF01.2] Validar as credenciais do usuário com os dados cadastrados no banco de dados.
+	[RF01.3] Informar ao usuário quando houver falha na autenticação.
+	[RF01.4] Criar uma sessão para o usuário autenticado.
+	[RF01.5] Redirecionar o usuário autenticado para a interface principal do sistema.
+
+[RF02] Interface principal do sistema
+	[RF02.1] Exibir o nome do usuário autenticado.
+	[RF02.2] Disponibilizar menu ou opção de acesso ao cadastro de produtos.
+	[RF02.3] Disponibilizar menu ou opção de acesso à gestão de produção (Just in Time).
+	[RF02.4] Disponibilizar opção de logout.
+	[RF02.5] Redirecionar o usuário para a tela de login após realizar o logout.
+
+[RF03] Cadastro e gerenciamento de produtos
+	[RF03.1] Listar os produtos cadastrados no banco de dados ao acessar a interface.
+	[RF03.2] Exibir os produtos cadastrados em formato de tabela.
+	[RF03.3] Disponibilizar campo de busca de produtos.
+	[RF03.4] Atualizar a listagem conforme o termo informado na busca.
+	[RF03.5] Permitir o cadastro de um novo produto.
+	[RF03.6] Permitir a edição de um produto existente.
+	[RF03.7] Permitir a exclusão de um produto existente.	
+	[RF03.8] Armazenar o nome do produto.
+	[RF03.9] Armazenar a descrição do produto.
+	[RF03.10] Armazenar o custo do produto.
+	[RF03.11] Armazenar a quantidade atual do produto em estoque.
+	[RF03.12] Armazenar a quantidade mínima de estoque configurada para o produto.
+	[RF03.13] Validar os dados informados no cadastro de produtos.
+	[RF03.14] Validar os dados informados na alteração de produtos.
+	[RF03.15] Exibir alertas quando os dados estiverem ausentes ou forem inválidos.
+	[RF03.16] Disponibilizar opção para retornar à interface principal.
+
+[RF04] Gestão de produção e movimentação de estoque
+	[RF04.1] Listar os produtos cadastrados em ordem alfabética.
+	[RF04.2] Permitir a seleção do produto que terá movimentação de estoque.
+	[RF04.3] Permitir selecionar o tipo de movimentação: produto fabricado ou produto pedido.
+	[RF04.4] Permitir informar a data da movimentação.
+	[RF04.5] Registrar a quantidade de produtos fabricados.
+	[RF04.6] Registrar a quantidade de produtos pedidos.
+	[RF04.7] Aumentar a quantidade disponível em estoque quando um produto for fabricado.
+	[RF04.8] Diminuir a quantidade disponível em estoque quando um produto for pedido.
+	[RF04.9] Registrar a movimentação de produção no banco de dados.
+	[RF04.10] Registrar o usuário responsável pela movimentação.
+	[RF04.11] Registrar a data e a quantidade da movimentação.
+	[RF04.12] Verificar automaticamente o estoque após uma saída de produtos.
+	[RF04.13] Exibir um alerta quando o estoque ficar abaixo da quantidade mínima configurada.
+	[RF04.14] Permitir acompanhar as movimentações de produção e pedidos.
+
+### [RF05] Controle de usuários e ações
+	[RF05.1] Identificar o usuário responsável por cada ação realizada no sistema.
+	[RF05.2] Registrar o usuário responsável pelas movimentações de estoque.
+	[RF05.3] Manter o acesso às funcionalidades do sistema condicionado à autenticação do usuário.

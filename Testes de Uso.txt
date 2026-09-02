@@ -1,0 +1,49 @@
+1. Ferramentas e Ambiente de Testes
+	Ambiente de Desenvolvimento: Node.js (v18+), Express.js.
+	Banco de Dados:MySQL (`preparacao_db`) gerenciado via Prisma ORM.
+	Ferramenta de Execução de Testes de API:Insomnia / Postman / VS Code REST Client.
+	Ferramenta de Validação BD: Prisma Studio (`npx prisma studio`) e MySQL Workbench.
+	Servidor Local:Executado via `node server.js` em `http://localhost:3000`.
+
+2. Casos de Testes por Requisito Funcional
+	RF01 - Autenticação e Controle de Acesso
+		CT01.1 - Login com Sucesso
+			Entrada: `POST /usuarios/login` com JSON `{"email": "admin@teste.com", "senha": "123"}`.
+			Resultado Esperado:** Status `200 OK`, mensagem de sucesso e dados do usuário retornados.
+
+		CT01.2 - Login com Credenciais Inválidas
+			Entrada: `POST /usuarios/login` com JSON `{"email": "admin@teste.com", "senha": "errada"}`.
+			Resultado Esperado: Status `401 Unauthorized` e mensagem "Credenciais inválidas".
+
+		CT01.3 - Cadastro de Usuário
+			Entrada: `POST /usuarios/cadastrar` com JSON `{"nome": "Operador", "email": "op@teste.com", "senha": "123"}`.
+			Resultado Esperado: Status `201 Created` e confirmação de cadastro.
+
+
+	RF02 & RF03 - Gestão de Produtos (Cadastro, Edição e Listagem)**
+		CT02.1 - Cadastrar Produto Válido
+			Entrada: `POST /produtos/cadastrar` com JSON `{"nome": "Peça A", "custo": 15.50, "estoque": 50, "qntdMinimo": 10}`.
+			Resultado Esperado: Status `201 Created` e retorno do objeto do produto.
+
+		CT02.2 - Cadastrar Produto com Dados Inválidos**
+			Entrada: `POST /produtos/cadastrar` enviando custo negativo `{"nome": "Peça B", "custo": -5, "estoque": 10, "qntdMinimo": 2}`.
+			Resultado Esperado: Status `400 Bad Request` com mensagem de erro de validação.
+
+		CT02.3 - Listar Produtos
+			Entrada: `GET /produtos/listar`.
+			Resultado Esperado: Status `200 OK` e lista em ordem alfabética.
+
+
+	RF04 & RF05 - Movimentação de Estoque e Alertas de Produção
+		CT04.1 - Entrada de Estoque (FABRICADO)
+			Entrada: `POST /producao/registrar` com JSON `{"usuarioId": 1, "produtoId": 1, "tipo": "FABRICADO", "qntd": 20}`.
+			Resultado Esperado: Status `201 Created`, aumento na quantidade em estoque do produto no banco de dados.
+
+		CT04.2 - Saída de Estoque (PEDIDO) com Alerta de Estoque Baixo
+			Entrada: `POST /producao/registrar` solicitando saída que deixe o estoque total menor que `qntdMinimo`.
+			Resultado Esperado: Status `201 Created`, decremento no estoque e campo de `alerta` retornado na resposta da requisição.
+
+		CT04.3 - Saída de Estoque sem Saldo Suficiente
+		Entrada: `POST /producao/registrar` com `qntd` superior ao estoque atual.
+		Resultado Esperado: Status `400 Bad Request` com mensagem "Estoque insuficiente".
+
