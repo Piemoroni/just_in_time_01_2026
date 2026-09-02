@@ -1,0 +1,21 @@
+Requisitos de Infraestrutura
+
+Ambiente de Desenvolvimento
+	Sistema Operacional: Microsoft Windows 11 Pro / 64-bits (ou Linux Ubuntu 22.04 LTS / macOS Sonoma)
+	Ambiente de Execução (Runtime): Node.js `v20.x` LTS (gerenciador de pacotes `npm v10.x`)
+	Editor de Código / IDE: Visual Studio Code (VS Code) com extensões *Prisma*, *ESLint* e *Thunder Client*
+
+Banco de Dados (SGBD)
+	Sistema Gerenciador de Banco de Dados: MySQL Server `v8.0` (ou MariaDB `v10.11`)
+	Porta Padrão: `3306`
+	Ferramenta de Modelagem / Gestão: MySQL Workbench `v8.0` / Prisma Studio
+
+Tecnologias e Dependências da Aplicação
+	Linguagem de Programação: JavaScript (ECMAScript 2023 / ES6+)
+	Mapeamento Objeto-Relacional (ORM): Prisma ORM `v5.x`
+	Framework Web Backend: Express.js `v4.x`
+	Biblioteca de CORS: `cors` `v2.8.5` (para liberação de requisições Cross-Origin no frontend)
+
+Especificações de Rede e Portas
+	Servidor Backend (API REST): `http://localhost:3000`
+	Servidor Frontend: Execução via protocolo HTTP local (`http://127.0.0.1:5500` via Live Server) ou protocolo de arquivo local (`file:///`)
