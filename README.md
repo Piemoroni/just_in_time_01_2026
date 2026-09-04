@@ -14,7 +14,6 @@ O sistema foi desenvolvido utilizando a arquitetura **REST API** para gestão e 
 | :--- | :---: | :---: | :---: | :---: |
 | **ATIVIDADE 6: REQUISITOS ADICIONAIS** | | | | |
 | Permite ao usuário retornar à interface principal? | C7 | 1 | **[X]** | [ ] |
-| Implementou campo de busca onde usuário insere o dado e a listagem de produtos é atualizada conforme termo inserido? | C7 | 3 | **[X]** | [ ] |
 | **ATIVIDADE 7: INTERFACE GESTÃO DE PRODUÇÃO (JUST IN TIME)** | | | | |
 | Desenvolveu a programação para o usuário selecionar o produto e selecionar se o produto foi pedido (entrar) ou produzido (sair) no estoque? (Atualizando a quantidade) | C7 | 2 | **[X]** | [ ] |
 | Desenvolveu a programação que o usuário possa inserir data de movimentação de entrada ou saída? | C7 | 3 | **[X]** | [ ] |
