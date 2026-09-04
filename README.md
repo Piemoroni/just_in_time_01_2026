@@ -1,6 +1,8 @@
 # Sistema de Gestão de Produção Just-in-Time
 
 Documentação técnica, requisitos, matriz de testes e mapa de evidências de desempenho para a aplicação de Gestão de Produção e Estoque baseada no conceito Just-in-Time.
+FRONT = pasta "front"
+BACK = pasta "just_in_time_01_2026"
 
 ---
 
